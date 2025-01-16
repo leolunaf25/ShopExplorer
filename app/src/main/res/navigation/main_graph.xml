@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/storeFragment">
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.lunatcoms.shopexplorer.presentation.ui.fragment.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/skinsFragment"
+        android:name="com.lunatcoms.shopexplorer.presentation.ui.fragment.SkinsFragment"
+        android:label="fragment_skins"
+        tools:layout="@layout/fragment_skins" />
+    <fragment
+        android:id="@+id/storeFragment"
+        android:name="com.lunatcoms.shopexplorer.presentation.ui.fragment.StoreFragment"
+        android:label="fragment_store"
+        tools:layout="@layout/fragment_store" />
+</navigation>
