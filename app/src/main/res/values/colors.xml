@@ -3,10 +3,16 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="primary">#87CEFA</color> <!-- Azul claro -->
-    <color name="primaryDark">#00BFFF</color> <!-- Azul brillante -->
-    <color name="secondary">#6495ED</color> <!-- Azul pastel -->
-    <color name="accent">#1E90FF</color> <!-- Azul neón -->
+
+    <color name="primary">#1C75BC</color> <!-- Azul Fortnite -->
+    <color name="primaryDark">#133B5C</color> <!-- Azul oscuro -->
+    <color name="secondary">#8A2BE2</color> <!-- Púrpura intenso -->
+    <color name="accent">#FFD700</color> <!-- Dorado vibrante -->
+    <color name="background">#0F1923</color> <!-- Fondo oscuro clásico -->
+    <color name="text">#FFFFFF</color> <!-- Blanco para el texto -->
+    <color name="textSecondary">#B0C4DE</color> <!-- Azul claro para texto secundario -->
+
+
     <color name="gold">#FFE78F</color>
     <color name="black_alpha">#98000000</color>
 
