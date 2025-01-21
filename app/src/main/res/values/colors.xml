@@ -4,15 +4,15 @@
     <color name="white">#FFFFFFFF</color>
 
 
-    <color name="primary">#1C75BC</color> <!-- Azul Fortnite -->
-    <color name="primaryDark">#133B5C</color> <!-- Azul oscuro -->
+    <color name="primary">#0068D7</color> <!-- Azul Fortnite -->
+    <color name="primaryDark">#0068D7</color> <!-- Azul oscuro -->
     <color name="secondary">#8A2BE2</color> <!-- Púrpura intenso -->
-    <color name="accent">#FFD700</color> <!-- Dorado vibrante -->
+    <color name="accent">#F3F2EA</color> <!-- Dorado vibrante -->
     <color name="background">#0F1923</color> <!-- Fondo oscuro clásico -->
     <color name="text">#FFFFFF</color> <!-- Blanco para el texto -->
     <color name="textSecondary">#B0C4DE</color> <!-- Azul claro para texto secundario -->
 
-
+    <color name="primary_send">#00113D</color>
     <color name="gold">#FFE78F</color>
     <color name="black_alpha">#98000000</color>
 
