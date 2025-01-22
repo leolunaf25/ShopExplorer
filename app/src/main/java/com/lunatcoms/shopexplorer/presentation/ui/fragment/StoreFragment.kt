@@ -6,7 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.lunatcoms.shopexplorer.databinding.FragmentStoreBinding
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class StoreFragment : Fragment() {
 
     private var _binding: FragmentStoreBinding? = null
