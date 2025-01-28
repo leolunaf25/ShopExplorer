@@ -12,6 +12,9 @@
     <color name="text">#FFFFFF</color> <!-- Blanco para el texto -->
     <color name="textSecondary">#B0C4DE</color> <!-- Azul claro para texto secundario -->
 
+    <color name="light_blue">#00A5D7</color>
+    <color name="dark_blue">#0068D7</color>
+
     <color name="primary_send">#00113D</color>
     <color name="gold">#FFE78F</color>
     <color name="black_alpha">#98000000</color>
