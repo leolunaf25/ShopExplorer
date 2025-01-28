@@ -26,11 +26,9 @@ class SkinsViewModel @Inject constructor(
 
     private fun fetchSkins() {
         viewModelScope.launch {
-            try {
-                _skins.value = getSkinsUseCase()
-            } catch (e: Exception){
-                _skins.value = emptyList()
-            }
+            val result = getSkinsUseCase()
+            allSkins = result
+            _skins.value = result // Inicializa con la lista completa
         }
     }
 

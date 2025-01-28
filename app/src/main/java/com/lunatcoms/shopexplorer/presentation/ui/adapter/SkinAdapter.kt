@@ -1,6 +1,5 @@
 package com.lunatcoms.shopexplorer.presentation.ui.adapter
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,7 +10,6 @@ class SkinAdapter(
     private var skins:List<SkinData>
 ) : RecyclerView.Adapter<SkinViewHolder>() {
 
-    @SuppressLint("NotifyDataSetChanged")
     fun updateData(newSkins: List<SkinData>) {
         skins = newSkins
         notifyDataSetChanged()

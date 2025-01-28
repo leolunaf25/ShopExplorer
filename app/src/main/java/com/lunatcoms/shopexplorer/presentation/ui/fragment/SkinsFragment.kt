@@ -50,7 +50,7 @@ class SkinsFragment : Fragment() {
         binding.svSkin.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
             override fun onQueryTextSubmit(query: String?): Boolean {
                 query?.let { skinsViewModel.searchSkins(it) }
-                return true
+                return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {

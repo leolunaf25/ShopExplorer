@@ -10,12 +10,9 @@ class SkinViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemSkinBinding.bind(view)
     fun bind(skin: SkinData){
-
-        if (skin.type.value == "outfit"){
-            Picasso.get()
-                .load(skin.images.icon)
-                .into(binding.ivSkin)
-            binding.tvSkinName.text = skin.name
-        }
+        Picasso.get()
+            .load(skin.images.icon)
+            .into(binding.ivSkin)
+        binding.tvSkinName.text = skin.name
     }
 }
