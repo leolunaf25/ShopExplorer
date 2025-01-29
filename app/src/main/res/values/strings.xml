@@ -10,4 +10,6 @@
 
     <string name="contentDescription">No description</string>
 
+    <string name="url_buck_icon">https://fortnite-api.com/images/vbuck.png</string>
+
 </resources>

@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.lunatcoms.shopexplorer.databinding.FragmentStoreBinding
 import com.lunatcoms.shopexplorer.presentation.ui.adapter.ShopAdapter
@@ -34,8 +35,9 @@ class StoreFragment : Fragment() {
     }
 
     private fun initShop() {
+
         adapter = ShopAdapter(emptyList())
-        binding.rvShop.layoutManager = LinearLayoutManager(context)
+        binding.rvShop.layoutManager = GridLayoutManager(context, 1)
         binding.rvShop.adapter = adapter
 
         shopViewModel.shops.observe(viewLifecycleOwner){ shops ->

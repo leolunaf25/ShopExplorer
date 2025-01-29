@@ -8,14 +8,11 @@ import com.lunatcoms.shopexplorer.data.model.Entry
 import com.lunatcoms.shopexplorer.data.model.ShopData
 
 class ShopAdapter(
-    private var shops: List<ShopData>
+    private var shops: List<Entry> = emptyList()
 ) : RecyclerView.Adapter<ShopViewHolder>() {
 
-    private var entries: List<Entry> = shops.flatMap { it.entries }
-
-    fun updateList(list: List<ShopData>) {
+    fun updateList(list: List<Entry>) {
         shops = list
-        entries = shops.flatMap { it.entries }
         notifyDataSetChanged()
     }
 
@@ -24,9 +21,9 @@ class ShopAdapter(
         return ShopViewHolder(layoutInflater.inflate(R.layout.item_shop, parent, false))
     }
 
-    override fun getItemCount(): Int = entries.size
+    override fun getItemCount(): Int = shops.size
 
     override fun onBindViewHolder(holder: ShopViewHolder, position: Int) {
-        holder.bind(entries[position])
+        holder.bind(shops[position])
     }
 }
