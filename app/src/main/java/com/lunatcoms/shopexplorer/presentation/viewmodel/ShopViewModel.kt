@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.lunatcoms.shopexplorer.data.model.Entry
 import com.lunatcoms.shopexplorer.data.model.ShopData
+import com.lunatcoms.shopexplorer.domain.model.ShopItem
 import com.lunatcoms.shopexplorer.domain.usecase.GetShopUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
@@ -16,8 +17,8 @@ class ShopViewModel @Inject constructor(
     private val getShopUseCase: GetShopUseCase
 ) : ViewModel() {
 
-    private val _shops = MutableLiveData<List<Entry>?>()
-    val shops: LiveData<List<Entry>?> = _shops
+    private val _shops = MutableLiveData<List<ShopItem>?>()
+    val shops: LiveData<List<ShopItem>?> = _shops
 
     init {
         fetchShop()

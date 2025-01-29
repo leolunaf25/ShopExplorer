@@ -14,6 +14,8 @@ import com.lunatcoms.shopexplorer.presentation.ui.adapter.ShopAdapter
 import com.lunatcoms.shopexplorer.presentation.viewmodel.ShopViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
+// StoreFragment.kt
+
 @AndroidEntryPoint
 class StoreFragment : Fragment() {
 
@@ -40,12 +42,11 @@ class StoreFragment : Fragment() {
         binding.rvShop.layoutManager = GridLayoutManager(context, 1)
         binding.rvShop.adapter = adapter
 
-        shopViewModel.shops.observe(viewLifecycleOwner){ shops ->
+        shopViewModel.shops.observe(viewLifecycleOwner) { shops ->
             shops?.let {
                 adapter.updateList(it)
             }
         }
-
     }
 
     override fun onCreateView(
@@ -55,9 +56,9 @@ class StoreFragment : Fragment() {
         _binding = FragmentStoreBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
-
 }
