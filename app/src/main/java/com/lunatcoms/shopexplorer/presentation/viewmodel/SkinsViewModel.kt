@@ -8,13 +8,13 @@ import com.lunatcoms.shopexplorer.data.model.SkinData
 import com.lunatcoms.shopexplorer.domain.usecase.GetSkinsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.lang.Exception
 import javax.inject.Inject
 
 @HiltViewModel
 class SkinsViewModel @Inject constructor(
     private val getSkinsUseCase: GetSkinsUseCase
 ):ViewModel() {
+
     private val _skins = MutableLiveData<List<SkinData>?>()
     val skins: LiveData<List<SkinData>?> = _skins
 

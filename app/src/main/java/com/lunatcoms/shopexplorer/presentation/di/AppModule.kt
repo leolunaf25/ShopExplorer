@@ -22,7 +22,6 @@ object AppModule {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-
     @Provides
     @Singleton
     fun provideFortniteApiService(retrofit: Retrofit): FortniteApiService{

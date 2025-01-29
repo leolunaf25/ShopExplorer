@@ -39,7 +39,7 @@ class SkinsFragment : Fragment() {
         binding.rvSkin.layoutManager = LinearLayoutManager(context)
         binding.rvSkin.adapter = adapter
 
-        skinsViewModel.skins.observe(viewLifecycleOwner){ skins ->
+        skinsViewModel.skins.observe(viewLifecycleOwner) { skins ->
             skins?.let {
                 adapter.updateData(it)
             }
@@ -47,14 +47,19 @@ class SkinsFragment : Fragment() {
     }
 
     private fun initSearchSkin() {
-        binding.svSkin.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+        binding.svSkin.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                query?.let { skinsViewModel.searchSkins(it) }
+                query?.let {
+                    skinsViewModel.searchSkins(it)
+                }
+
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                newText?.let { skinsViewModel.searchSkins(it) }
+                newText?.let {
+                    skinsViewModel.searchSkins(it)
+                }
                 return true
             }
 

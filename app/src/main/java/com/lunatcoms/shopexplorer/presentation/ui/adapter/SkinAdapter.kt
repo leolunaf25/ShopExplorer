@@ -19,11 +19,8 @@ class SkinAdapter(
         val layoutInflater = LayoutInflater.from(parent.context)
         return SkinViewHolder(layoutInflater.inflate(R.layout.item_skin, parent, false))
     }
-
     override fun getItemCount(): Int = skins.size
-
     override fun onBindViewHolder(holder: SkinViewHolder, position: Int) {
         holder.bind(skins[position])
     }
-
 }

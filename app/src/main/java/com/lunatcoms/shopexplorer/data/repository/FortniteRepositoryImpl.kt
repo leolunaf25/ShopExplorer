@@ -1,6 +1,7 @@
 package com.lunatcoms.shopexplorer.data.repository
 
 import com.lunatcoms.shopexplorer.data.api.FortniteApiService
+import com.lunatcoms.shopexplorer.data.model.ShopData
 import com.lunatcoms.shopexplorer.data.model.SkinData
 import com.lunatcoms.shopexplorer.domain.repository.FortniteRepository
 import java.lang.Exception
@@ -17,4 +18,15 @@ class FortniteRepositoryImpl @Inject constructor(
             throw Exception("Error: ${response.code()} - ${response.message()}")
         }
     }
+
+    override suspend fun getShop(): List<ShopData> {
+        val response = apiService.getShop()
+        if (response.isSuccessful){
+            val shopResponse = response.body()
+            return shopResponse?.data?.let { listOf(it) } ?: emptyList()
+        } else {
+            throw Exception("Error: ${response.code()} - ${response.message()}")
+        }
+    }
+
 }
