@@ -13,9 +13,12 @@ class GetShopUseCase @Inject constructor(
         val shopData = repository.getShop()
         val entries = shopData.flatMap { it.entries }
 
+        val undesiredNames = listOf("Jam Tracks", "Pistas de improvisación", "OtroNombre1", "OtroNombre2")
         val filteredEntries = entries.filter { entry ->
-            entry.layout?.name != "Jam Tracks"
+            val name = entry.layout?.name
+            !undesiredNames.contains(name)
         }
+
 
         val groupedEntries = filteredEntries.groupBy { it.layout?.name ?: "Other" }
         val shopItems = mutableListOf<ShopItem>()

@@ -6,5 +6,11 @@
     android:background="@drawable/gradient_primary_center"
     tools:context=".presentation.ui.fragment.MapFragment">
 
+    <ImageView
+        android:id="@+id/ivMap"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />
 
 </FrameLayout>

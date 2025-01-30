@@ -4,8 +4,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.lunatcoms.shopexplorer.data.model.Entry
-import com.lunatcoms.shopexplorer.data.model.ShopData
 import com.lunatcoms.shopexplorer.domain.model.ShopItem
 import com.lunatcoms.shopexplorer.domain.usecase.GetShopUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

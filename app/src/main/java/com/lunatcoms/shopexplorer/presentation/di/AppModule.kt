@@ -18,7 +18,7 @@ object AppModule {
     @Singleton
     fun provideRetrofit(): Retrofit {
         return Retrofit.Builder()
-            .baseUrl("https://fortnite-api.com/v2/")
+            .baseUrl("https://fortnite-api.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }

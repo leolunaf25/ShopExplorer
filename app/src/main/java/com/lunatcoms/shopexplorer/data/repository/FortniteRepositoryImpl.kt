@@ -1,6 +1,9 @@
 package com.lunatcoms.shopexplorer.data.repository
 
+import android.util.Log
 import com.lunatcoms.shopexplorer.data.api.FortniteApiService
+import com.lunatcoms.shopexplorer.data.model.MapData
+import com.lunatcoms.shopexplorer.data.model.MapImages
 import com.lunatcoms.shopexplorer.data.model.ShopData
 import com.lunatcoms.shopexplorer.data.model.SkinData
 import com.lunatcoms.shopexplorer.domain.repository.FortniteRepository
@@ -29,4 +32,13 @@ class FortniteRepositoryImpl @Inject constructor(
         }
     }
 
+    override suspend fun getMap(): MapImages {
+        val response = apiService.getMap()
+
+        if (response.isSuccessful){
+            return response.body()?.data?.images ?: MapImages("No valida","No valida")
+        }else{
+            throw Exception("Error: ${response.code()} - ${response.message()}")
+        }
+    }
 }
