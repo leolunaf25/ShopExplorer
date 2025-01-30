@@ -32,7 +32,18 @@ data class Entry(
     @SerializedName("brItems") val brItems: List<BrItem>?,
     @SerializedName("banner") val banner: Banner?,
     @SerializedName("bundle") val bundle: BundleData?,
-    @SerializedName("cars") val cars: List<Car>?
+    @SerializedName("cars") val cars: List<Car>?,
+    @SerializedName("tracks") val tracks: List<Track>?,
+    @SerializedName("instruments") val instruments: List<Instrument>?
+)
+//Fixing in case of Instrument, value name//
+data class Instrument(
+    @SerializedName("name") val name: String
+)
+//Fixing in case of Track, value image//
+data class Track(
+    @SerializedName("albumArt") val albumArt: String,
+    @SerializedName("title") val title: String
 )
 
 data class Banner(

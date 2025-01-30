@@ -26,11 +26,15 @@ class ShopViewHolder(view: View) : RecyclerView.ViewHolder(view) {
             Picasso.get().load(entry.bundle.image).into(binding.ivItem)
         } else {
             // Verificar si hay imágenes en brItems
-            val brItemsNames = entry.brItems?.mapNotNull { it.name }?.firstOrNull() ?: "No items"
+            val brItemsNames = entry.brItems?.mapNotNull { it.name }?.firstOrNull() ?:
+            entry.instruments?.mapNotNull { it.name }?.firstOrNull() ?:
+            entry.tracks?.mapNotNull { it.title }?.firstOrNull() ?:
+            "No Information"
             binding.tvItemName.text = brItemsNames
 
             val urlImage = entry.brItems?.firstOrNull()?.images?.featured
                 ?: entry.newDisplayAsset?.renderImages?.firstOrNull()?.image
+                ?: entry.tracks?.firstOrNull()?.albumArt
                 ?: "https://fortnite-api.com/images/vbuck.png"
 
             Picasso.get().load(urlImage).into(binding.ivItem)
