@@ -78,5 +78,4 @@ class SkinsFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
-
 }
