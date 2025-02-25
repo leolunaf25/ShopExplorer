@@ -7,7 +7,8 @@ import com.lunatcoms.shopexplorer.R
 import com.lunatcoms.shopexplorer.data.model.SkinData
 
 class SkinAdapter(
-    private var skins:List<SkinData>
+    private var skins:List<SkinData> = emptyList(),
+    private val onItemSelected:(SkinData) -> Unit
 ) : RecyclerView.Adapter<SkinViewHolder>() {
 
     fun updateData(newSkins: List<SkinData>) {
@@ -21,6 +22,6 @@ class SkinAdapter(
     }
     override fun getItemCount(): Int = skins.size
     override fun onBindViewHolder(holder: SkinViewHolder, position: Int) {
-        holder.bind(skins[position])
+        holder.bind(skins[position], onItemSelected)
     }
 }

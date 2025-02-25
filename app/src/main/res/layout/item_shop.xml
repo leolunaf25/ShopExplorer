@@ -16,10 +16,10 @@
         <ImageView
             android:id="@+id/ivItem"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="350dp"
             android:background="@drawable/gradient_primary_center"
-            android:contentDescription="@string/contentDescription"
             android:scaleType="fitCenter"
+            android:contentDescription="@string/contentDescription"
             android:src="@drawable/ic_skins"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

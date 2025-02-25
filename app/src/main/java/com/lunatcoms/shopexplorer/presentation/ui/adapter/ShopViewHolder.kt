@@ -6,8 +6,6 @@ import com.lunatcoms.shopexplorer.data.model.Entry
 import com.lunatcoms.shopexplorer.databinding.ItemShopBinding
 import com.squareup.picasso.Picasso
 
-// ShopViewHolder.kt
-
 class ShopViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemShopBinding.bind(view)
@@ -23,13 +21,14 @@ class ShopViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         // Verificar si el bundle no es nulo y cargar la imagen del bundle
         if (entry.bundle != null) {
             binding.tvItemName.text = entry.bundle.name
-            Picasso.get().load(entry.bundle.image).into(binding.ivItem)
+            Picasso.get()
+                .load(entry.bundle.image)
+                .into(binding.ivItem)
         } else {
             // Verificar si hay imágenes en brItems
-            val brItemsNames = entry.brItems?.mapNotNull { it.name }?.firstOrNull() ?:
-            entry.instruments?.mapNotNull { it.name }?.firstOrNull() ?:
-            entry.tracks?.mapNotNull { it.title }?.firstOrNull() ?:
-            "No Information"
+            val brItemsNames = entry.brItems?.mapNotNull { it.name }?.firstOrNull()
+                ?: entry.instruments?.mapNotNull { it.name }?.firstOrNull()
+                ?: entry.tracks?.mapNotNull { it.title }?.firstOrNull() ?: "No Information"
             binding.tvItemName.text = brItemsNames
 
             val urlImage = entry.brItems?.firstOrNull()?.images?.featured
@@ -37,7 +36,9 @@ class ShopViewHolder(view: View) : RecyclerView.ViewHolder(view) {
                 ?: entry.tracks?.firstOrNull()?.albumArt
                 ?: "https://fortnite-api.com/images/vbuck.png"
 
-            Picasso.get().load(urlImage).into(binding.ivItem)
+            Picasso.get()
+                .load(urlImage)
+                .into(binding.ivItem)
         }
     }
 }

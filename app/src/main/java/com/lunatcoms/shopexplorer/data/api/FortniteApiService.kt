@@ -7,9 +7,9 @@ import retrofit2.Response
 import retrofit2.http.GET
 
 interface FortniteApiService {
-    @GET("v2/cosmetics/br/")
+    @GET("v2/cosmetics/br?language=es-419")
     suspend fun getSkins(): Response<SkinResponse>
-    @GET("v2/shop?language=es")
+    @GET("v2/shop?language=es-419")
     suspend fun getShop(): Response<ShopResponse>
     @GET("v1/map")
     suspend fun getMap(): Response<MapResponse>

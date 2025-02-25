@@ -14,10 +14,23 @@
         android:id="@+id/skinsFragment"
         android:name="com.lunatcoms.shopexplorer.presentation.ui.fragment.SkinsFragment"
         android:label="fragment_skins"
-        tools:layout="@layout/fragment_skins" />
+        tools:layout="@layout/fragment_skins" >
+        <action
+            android:id="@+id/action_skinsFragment_to_skinDetailActivity"
+            app:destination="@id/skinDetailActivity" />
+    </fragment>
     <fragment
         android:id="@+id/storeFragment"
         android:name="com.lunatcoms.shopexplorer.presentation.ui.fragment.StoreFragment"
         android:label="fragment_store"
         tools:layout="@layout/fragment_store" />
+    <activity
+        android:id="@+id/skinDetailActivity"
+        android:name="com.lunatcoms.shopexplorer.presentation.ui.detail.SkinDetailActivity"
+        android:label="activity_skin_detail"
+        tools:layout="@layout/activity_skin_detail" >
+        <argument
+            android:name="idSkin"
+            app:argType="string" />
+    </activity>
 </navigation>
