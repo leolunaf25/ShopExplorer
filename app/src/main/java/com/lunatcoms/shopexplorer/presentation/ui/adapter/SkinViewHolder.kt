@@ -11,8 +11,11 @@ class SkinViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
     private val binding = ItemSkinBinding.bind(view)
     fun bind(skin: SkinData, onItemSelected: (SkinData) -> Unit) {
+
+        val imageUrl = skin?.images?.icon ?: skin.images.smallIcon
+
         Picasso.get()
-            .load(skin.images.icon)
+            .load(imageUrl)
             .into(binding.ivSkin)
         binding.tvSkinName.text = skin.name
 

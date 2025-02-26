@@ -18,7 +18,6 @@
             android:layout_width="match_parent"
             android:layout_height="350dp"
             android:background="@drawable/gradient_primary_center"
-            android:scaleType="fitCenter"
             android:contentDescription="@string/contentDescription"
             android:src="@drawable/ic_skins"
             app:layout_constraintBottom_toBottomOf="parent"

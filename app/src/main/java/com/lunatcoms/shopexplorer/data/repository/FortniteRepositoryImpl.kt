@@ -6,6 +6,8 @@ import com.lunatcoms.shopexplorer.data.model.MapData
 import com.lunatcoms.shopexplorer.data.model.MapImages
 import com.lunatcoms.shopexplorer.data.model.ShopData
 import com.lunatcoms.shopexplorer.data.model.SkinData
+import com.lunatcoms.shopexplorer.data.model.SkinDetailData
+import com.lunatcoms.shopexplorer.data.model.SkinDetailResponse
 import com.lunatcoms.shopexplorer.domain.repository.FortniteRepository
 import java.lang.Exception
 import javax.inject.Inject
@@ -20,6 +22,10 @@ class FortniteRepositoryImpl @Inject constructor(
         } else{
             throw Exception("Error: ${response.code()} - ${response.message()}")
         }
+    }
+
+    override suspend fun getDetailSkin(idSkin:String): SkinDetailResponse {
+        return apiService.getDetailSkin(idSkin).body()!!
     }
 
     override suspend fun getShop(): List<ShopData> {
