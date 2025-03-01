@@ -47,8 +47,8 @@ class ShopAdapter(
     }
 
     companion object {
-        private const val ITEM_TYPE_ENTRY = 0
-        private const val ITEM_TYPE_HEADER = 1
+        const val ITEM_TYPE_ENTRY = 0
+        const val ITEM_TYPE_HEADER = 1
     }
 }
 

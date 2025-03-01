@@ -39,7 +39,18 @@ class StoreFragment : Fragment() {
     private fun initShop() {
 
         adapter = ShopAdapter(emptyList())
-        binding.rvShop.layoutManager = GridLayoutManager(context, 1)
+
+        val gridLayoutManagerIn = GridLayoutManager(context,2)
+        gridLayoutManagerIn.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup(){
+            override fun getSpanSize(position: Int): Int {
+                return when (adapter.getItemViewType(position)){
+                    ShopAdapter.ITEM_TYPE_HEADER -> 2
+                    ShopAdapter.ITEM_TYPE_ENTRY -> 1
+                    else -> 1
+                }
+            }
+        }
+        binding.rvShop.layoutManager = gridLayoutManagerIn
         binding.rvShop.adapter = adapter
 
         shopViewModel.shops.observe(viewLifecycleOwner) { shops ->
