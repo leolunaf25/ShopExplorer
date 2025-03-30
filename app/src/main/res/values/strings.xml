@@ -8,6 +8,9 @@
     <string name="Skins">Skins</string>
     <string name="Map">Map</string>
 
+    <string name="Date">Fecha de salida: %s</string>
+
+
     <string name="contentDescription">No description</string>
 
     <string name="url_buck_icon">https://fortnite-api.com/images/vbuck.png</string>

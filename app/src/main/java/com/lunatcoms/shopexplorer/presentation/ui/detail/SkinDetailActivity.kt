@@ -1,25 +1,27 @@
 package com.lunatcoms.shopexplorer.presentation.ui.detail
 
-import androidx.appcompat.app.AppCompatActivity
+import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import androidx.activity.viewModels
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
-import androidx.navigation.NavArgs
 import androidx.navigation.navArgs
 import com.lunatcoms.shopexplorer.R
 import com.lunatcoms.shopexplorer.databinding.ActivitySkinDetailBinding
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
+import java.text.SimpleDateFormat
+import java.util.Locale
 
 @AndroidEntryPoint
 class SkinDetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySkinDetailBinding
-    private val skinDetailViewModel:SkinDetailViewModel by viewModels()
+    private val skinDetailViewModel: SkinDetailViewModel by viewModels()
 
-    private val args:SkinDetailActivityArgs by navArgs()
+    private val args: SkinDetailActivityArgs by navArgs()
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySkinDetailBinding.inflate(layoutInflater)
@@ -40,10 +42,33 @@ class SkinDetailActivity : AppCompatActivity() {
                 Picasso.get()
                     .load(imageUrl)
                     .into(binding.ivSkinDetail)
+
+                binding.tvNameDetail.text = it.data.name
+
+                binding.tvDescriptionDetail.text = it.data.description
+
+                binding.tvIntroductionDetail.text = it.data.introduction.text
+
+                binding.tvRarityDetail.text = it.data.rarity.displayValue
+
+                binding.tvDateDetail.text = getString(R.string.Date, formatDate(it.data.added))
+
             }
+
         })
 
 
-
     }
+
+    private fun formatDate(inputDate: String): String {
+        val inputFormat =
+            SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'", Locale.getDefault())
+        val outputFormat = SimpleDateFormat(
+            "dd 'de' MMMM 'de' yyyy",
+            Locale("es", "ES")
+        )
+        val date = inputFormat.parse(inputDate)
+        return outputFormat.format(date)
+    }
+
 }

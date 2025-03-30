@@ -12,7 +12,7 @@ interface FortniteApiService {
     @GET("v2/cosmetics/br?language=es-419")
     suspend fun getSkins(): Response<SkinResponse>
 
-    @GET("v2/cosmetics/br/{idSkin}")
+    @GET("v2/cosmetics/br/{idSkin}?language=es-419")
     suspend fun getDetailSkin(@Path("idSkin") idSkin:String): Response<SkinDetailResponse>
 
     @GET("v2/shop?language=es-419")

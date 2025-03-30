@@ -63,6 +63,9 @@ dependencies {
     //Zoom and panning ImageView
     implementation 'com.github.MikeOrtiz:TouchImageView:3.0.0'
 
+    implementation 'com.google.android.material:material:1.9.0'
+
+
     //Settings
     implementation 'androidx.core:core-ktx:1.8.0'
     implementation 'androidx.appcompat:appcompat:1.7.0'
