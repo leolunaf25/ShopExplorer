@@ -35,8 +35,8 @@
 
             <ImageView
                 android:id="@+id/ivIconBuck"
-                android:layout_width="32dp"
-                android:layout_height="32dp"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
                 android:contentDescription="@string/contentDescription"
                 tools:src="@drawable/ic_shop"
 
@@ -46,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
-                android:textSize="26sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
 
                 android:shadowColor="#000000"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="26sp"
+            android:textSize="18sp"
             android:textStyle="bold"
             android:shadowColor="#000000"
             android:shadowDx="1"
